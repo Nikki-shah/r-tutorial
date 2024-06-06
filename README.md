@@ -1,6 +1,6 @@
 # R Tutorial
 
-In this repository lives the source code for the R tutorial course put together by @nikki-shah.
+In this repository lives the source code for the R tutorial course put together by me.
 
 It contains the following scripts:
 1. Basics
