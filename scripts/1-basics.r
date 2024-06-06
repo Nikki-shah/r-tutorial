@@ -71,3 +71,13 @@ install.packages("tidyverse")
 library("tidyverse")
 ## or 
 require("tidyverse")
+
+# Data handling
+View(diamonds)
+## we can simply use filter by row
+filter(diamonds, cut == "Ideal")
+## with multiple conditions
+filter(diamonds, cut == "Ideal" & price > mean(diamonds$price))
+## the best way to manipulate data
+## is by using pipe operator %>% 
+diamonds %>% filter(cut=="Ideal" & price > mean(diamonds$price)) 
