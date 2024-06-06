@@ -54,3 +54,20 @@ full_data$names
 full_data[1, ]
 ## second row, first col
 full_data[2, 1]
+
+# Working with built-in datasets
+## checking the available data
+data()
+## you can view a specific set
+View(Titanic)
+
+# Installing and importing libraries
+## we can install packages the following way
+install.packages("tidyverse")
+## tidyverse is the most commonly used lib
+## because it's a collection of libraries
+## dplyr, ggplot2, tidyr, purr, etc.
+## we can import packages
+library("tidyverse")
+## or 
+require("tidyverse")
