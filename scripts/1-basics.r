@@ -80,4 +80,26 @@ filter(diamonds, cut == "Ideal")
 filter(diamonds, cut == "Ideal" & price > mean(diamonds$price))
 ## the best way to manipulate data
 ## is by using pipe operator %>% 
-diamonds %>% filter(cut=="Ideal" & price > mean(diamonds$price)) 
+ideal_diamonds <- diamonds %>% 
+  ## filter by row
+  filter(cut=="Ideal" & price > mean(diamonds$price)) %>% 
+  ## create new fields
+  mutate(weight_grams = carat * 0.2) %>% 
+  ## select certain columns
+  select(starts_with('c') | price) %>% 
+  ## and sort by price (desc)
+  arrange(-price)
+## checking the new data frame
+glimpse(ideal_diamonds)
+
+# Exploring the data
+## checking the columns
+names(ideal_diamonds)
+## the number of features
+length(ideal_diamonds)
+## checking the # of obs
+length(ideal_diamonds$carat)
+## getting the unique values
+unique(ideal_diamonds$clarity)
+## getting the missing values
+!complete.cases(ideal_diamonds)
